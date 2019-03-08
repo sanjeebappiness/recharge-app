@@ -1,0 +1,16 @@
+<div class="status">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../../../assets/{{mobileDetails.operator}}.png" alt="Card image cap">
+
+        <div class="card-body">
+            <h5 class="card-title title">Recharge SuccessFul</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Network Type: {{mobileDetails.networkType}}</li>
+                <li class="list-group-item">MobileNumber: {{mobileDetails.mobileNumber}} </li>
+                <li class="list-group-item">Amount: {{mobileDetails.amount}}</li>
+                <li class="list-group-item">Operator: {{mobileDetails.operator}}</li>
+            </ul>
+            <a [routerLink]="[ '/mobile' ]" class="btn btn-primary status-ok">Ok</a>
+        </div>
+    </div>
+</div>

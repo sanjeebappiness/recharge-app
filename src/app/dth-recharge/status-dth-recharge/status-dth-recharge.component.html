@@ -1,0 +1,15 @@
+<div class="status">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top status-image" src="../../../assets/{{dthData.operator}}.png" alt="Card image cap">
+
+        <div class="card-body">
+            <h5 class="card-title title">Recharge SuccessFul</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Customer ID: {{dthData.customerId}}</li>
+                <li class="list-group-item">Operator: {{dthData.operator}} </li>
+                <li class="list-group-item">Amount: {{dthData.amount}}</li>
+            </ul>
+            <a [routerLink]="[ '/dth' ]" class="btn btn-primary status-ok">Ok</a>
+        </div>
+    </div>
+</div>

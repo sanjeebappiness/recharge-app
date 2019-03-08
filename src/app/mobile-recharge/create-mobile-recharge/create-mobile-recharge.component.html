@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form #mobileForm="ngForm" (ngSubmit)="savedetails(mobileForm)">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title" style="text-align: center;">
+                        <span class="glyphicon glyphicon-earphone"> </span> Mobile Recharge</div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label">Network Type: <i class="star"> *</i></label>
+                        <div class="form-control">
+                            <label class="radio-inline">
+                   <input type="radio" value="Postpaid"  [(ngModel)]="mobileData.networkType" #networkType="ngModel" name="gender"required>Postpaid
+                            </label>
+                            <label class="radio-inline">
+                   <input type="radio" value="Prepaid"  [(ngModel)]="mobileData.networkType" #networkType="ngModel" name="gender"  required >Prepaid
+                           </label>
+                        </div>
+                        <div *ngIf="submit && networkType.invalid">
+                            <div class="invalid-feedback" *ngIf="networkType.errors.required">Network Type required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Enter Mobile Number: <i class="star"> *</i></label>
+                        <input type="email" required [(ngModel)]="mobileData.mobileNumber" #mobileNumber="ngModel" name="mobileNumber" class="form-control" id="email">
+                        <div *ngIf="submit && mobileNumber.invalid">
+                            <div class="invalid-feedback" *ngIf="mobileNumber.errors.required">Mobile Number required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Enter Amount(₹): <i class="star"> *</i></label>
+                        <input type="email" required [(ngModel)]="mobileData.amount" #amount="ngModel" name="amount" class="form-control" id="email">
+                        <div *ngIf="submit && amount.invalid">
+                            <div class="invalid-feedback" *ngIf="amount.errors.required">Amount required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sel1">Select Operator(select one): <i class="star"> *</i></label>
+                        <select [(ngModel)]="mobileData.operator" #operator="ngModel" required name="operator" class="form-control" id="sel1">
+                             <option value="">Select Operator</option>
+                             <option *ngFor="let operator of operators" [value]="operator.name"> {{operator.name}}</option>
+                        </select>
+                        <div *ngIf="submit && operator.invalid">
+                            <div class="invalid-feedback" *ngIf="operator.errors.required">Operator required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <a class="savebtn">
+                        <button type="submit" class="btn-primary btn-lg">
+          <span class="glyphicon  glyphicon-save-file"> </span> Submit</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-sm-4"></div>
+
+</div>
